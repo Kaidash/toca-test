@@ -6,9 +6,9 @@ import {cn} from "@/libs/functions";
 
 export default function HomeHeroSection({ backgroundImage, title }: Section) {
   return (
-    <section className="relative mb-[20%] w-full">
-      {!!title && (<HeroTitle className="z-11 absolute left-1/2 bottom-[-20%] transform -translate-x-1/2" title={title}  />) }
-      {!!backgroundImage && <SanityImageBlock priority image={backgroundImage} /> }
+    <section className="relative mb-[20%] w-full min-h-[100vh] md:h-auto">
+      {!!title && (<HeroTitle className="z-11 absolute left-1/2 bottom-[5%] md:bottom-[-20%] transform -translate-x-1/2" title={title}  />) }
+      {!!backgroundImage && <SanityImageBlock className="object-cover h-[100%] md:object-contain md:h-auto" priority image={backgroundImage} /> }
       <GradientOverlay
         direction='to-t'
         className={cn(

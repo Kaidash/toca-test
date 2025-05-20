@@ -3,7 +3,7 @@ import * as React from "react";
 const SectionDivider = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="282"
+    width="100%"
     height="7"
     fill="none"
     viewBox="0 0 282 7"

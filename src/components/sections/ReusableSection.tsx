@@ -16,7 +16,7 @@ export default function ReusableSection({ backgroundImage, title, width = 'full'
   return (
     <section
       className={cn(
-        'h-[640px] lg:h-[672px] p-5',
+        'h-[640px] lg:h-[672px] p-5 w-full',
         widthMap[width]
       )}>
       <div className="relative z-10 flex h-full flex-col justify-between items-center rounded-lg overflow-hidden py-20">
