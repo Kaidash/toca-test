@@ -1,10 +1,15 @@
-import type { Page } from '@/sanity/types';
-import HomeHeroSection from '../sections/HomeHeroSection';
-import ReusableSection from '../sections/ReusableSection';
+import type { Page, HomeHeroSection, ReusableSection } from '@/sanity/types';
+import HomeHeroSectionComponent from '../sections/HomeHeroSection';
+import ReusableSectionComponent from '../sections/ReusableSection';
 
-const sections = {
-  homeHeroSection: HomeHeroSection,
-  reusableSection: ReusableSection,
+type SectionComponents = {
+  homeHeroSection: typeof HomeHeroSectionComponent;
+  reusableSection: typeof ReusableSectionComponent;
+};
+
+const sections: SectionComponents = {
+  homeHeroSection: HomeHeroSectionComponent,
+  reusableSection: ReusableSectionComponent,
 };
 
 export function SectionRenderer({ section }: { section: Page['sections'][number] }) {
@@ -17,5 +22,9 @@ export function SectionRenderer({ section }: { section: Page['sections'][number]
     return null;
   }
 
-  return <SectionComponent {...section} />;
+  if (_type === 'homeHeroSection') {
+    return <HomeHeroSectionComponent {...(section as HomeHeroSection)} />;
+  }
+  
+  return <ReusableSectionComponent {...(section as ReusableSection)} />;
 }

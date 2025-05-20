@@ -48,7 +48,7 @@ type BaseSection = {
   _key: string;
 };
 
-type HomeHeroSection = BaseSection & {
+export type HomeHeroSection = BaseSection & {
   _type: 'homeHeroSection';
   title: string;
   backgroundImage: SanityImage;
